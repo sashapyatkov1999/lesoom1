@@ -30,9 +30,9 @@ public class Lesson4HomeWork {
 
         // Задание №3:
         // Дано:
-        Lesson4Homework3 array = new Lesson4Homework3(true,true,false,
-                true,false);
-        System.out.println(array.Sale());
+        Lesson4Homework3 array = new Lesson4Homework3();
+        System.out.println(array.set1Change());
+        System.out.println(array.setSale());
 
 
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
