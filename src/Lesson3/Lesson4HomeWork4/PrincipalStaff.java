@@ -2,27 +2,27 @@ package Lesson3.Lesson4HomeWork4;
 
 public class PrincipalStaff {
     private String name;
-    private int age;
-    private int height;
-    int vodka;
-    int damagedVodka = 0;
+    private  int checkList = 0;
 
-    public PrincipalStaff(String name,int age, int height,int vodka){
-        this.age = age;
-        this.height = height;
+    public PrincipalStaff(String name){
         this.name = name;
-        this.vodka = vodka;
 
     }
 
 
-    public  int setVodka(){
-        this.vodka =Stock.countVodka - this.vodka;
-        return this.vodka;
-    }
-    public int damagedGoods() {
-        damagedVodka = setVodka() + vodka;
+    public  void setVodka(Stock kkk, int amount){
+            if (kkk.getBalance() - amount > 0) {
+                kkk.setBalance(kkk.getBalance() - amount);
+                this.checkList += amount;
+                System.out.println("Ура, я, " + this.name + ", испортил водку!");
+            } else {
+                System.out.println("Достаточно набил");
+            }
 
-        return damagedVodka;
+        }
+        int getLogBook () {
+            return this.checkList;
+        }
+
     }
-}
+

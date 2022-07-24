@@ -2,12 +2,17 @@ package Lesson3.Lesson4HomeWork4;
 
 public class Example4 {
     public static void main(String[] args) {
-        PrincipalStaff oleg = new PrincipalStaff("Олег",30,200,10);
-        PrincipalStaff sasha = new PrincipalStaff("Саша",20,180,20);
-        PrincipalStaff ivan = new PrincipalStaff("Иван",24,190,30);
-        Stock vodkaAmount = new Stock(200);
-        oleg.damagedGoods();
-        System.out.println("Ура я испортил водку!" + oleg.damagedGoods());
+        PrincipalStaff oleg = new PrincipalStaff("Олег");
+        PrincipalStaff sasha = new PrincipalStaff("Саша");
+        PrincipalStaff ivan = new PrincipalStaff("Иван");
+        Stock stock = new Stock(100);
+        oleg.setVodka(stock, 20);
+        sasha.setVodka(stock, 10);
+        ivan.setVodka(stock, 15);
+        System.out.println(oleg.getLogBook());
+        System.out.println(sasha.getLogBook());
+        System.out.println(ivan.getLogBook());
+        System.out.println("Остаток на складе: " + stock.getBalance() + "шт.");
         // Написать систему управления складскими запасами. Создать класс склад, создать класс работники
         // (написать геттеры на все аттрибуты).
         // Количество работников минимум 3.

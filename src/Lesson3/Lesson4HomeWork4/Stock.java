@@ -1,10 +1,17 @@
 package Lesson3.Lesson4HomeWork4;
 
 public class Stock {
-    public static int countVodka = 1000;
+    private int bottleOfVodka;
 
-    public Stock(int countVodka){
-        this.countVodka = countVodka;
+    public Stock(int bottleOfVodka) {
+        this.bottleOfVodka = bottleOfVodka;
+    }
+    public int getBalance() {
+        return  this.bottleOfVodka;
+    }
+
+    void setBalance(int bottleOfVodka) {
+        this.bottleOfVodka = bottleOfVodka;
     }
 
 }
