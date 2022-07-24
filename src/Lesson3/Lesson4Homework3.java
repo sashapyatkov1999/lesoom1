@@ -1,55 +1,56 @@
  package Lesson3;
 
 public class Lesson4Homework3 {
-    boolean hasFuel ;
-    boolean hasElectricsProblem ;
-    boolean hasMotorProblem ;
-    boolean hasTransmissionProblem ;
-    boolean hasWheelsProblem;
+    boolean hasFuel  = true;
+    boolean hasElectricsProblem = false ;
+    boolean hasMotorProblem  = false;
+    boolean hasTransmissionProblem = false;
+    boolean hasWheelsProblem = false;
     private boolean[] massive = new boolean[]{hasFuel, hasWheelsProblem, hasElectricsProblem, hasMotorProblem, hasTransmissionProblem};
-    int balance = 0;
+    double balance = 0;
     int moneyForDiagnostic = 1000;
     int moneyForElectronic = 5000;
     int moneyForMotor = 10000;
     int moneyForTransmission = 4000;
     int moneyForWheels = 2000;
     int count = 0;
-    public  Lesson4Homework3(boolean hasFuel,boolean hasWheelsProblem,boolean hasElectricsProblem,boolean hasMotorProblem,boolean hasTransmissionProblem){
+    /*  public  Lesson4Homework3(boolean hasFuel,boolean hasWheelsProblem,boolean hasElectricsProblem,boolean hasMotorProblem,boolean hasTransmissionProblem){
         this.hasFuel = hasFuel;
         this.hasWheelsProblem = hasWheelsProblem;
         this.hasElectricsProblem = hasElectricsProblem;
         this.hasMotorProblem = hasMotorProblem;
         this.hasTransmissionProblem = hasTransmissionProblem;
 
-    }
+    }*/
 
-    public int setIsFuel(){
+    public double setIsFuel(){
         if (hasFuel == true && (hasWheelsProblem == true ||hasElectricsProblem == true  || hasMotorProblem == true || hasTransmissionProblem == true )){
             balance = 0;
-        }else {
+        }else         if (hasFuel == true && (hasWheelsProblem == false ||hasElectricsProblem == false  || hasMotorProblem == false || hasTransmissionProblem == false )) {
             balance = moneyForDiagnostic;
         }
         return  this.balance;
+
     }
-    public int setIsElectricsProblem(){
+    public double setIsElectricsProblem(){
         if (hasElectricsProblem == true){
             balance =moneyForElectronic;
         }
         return this.balance;
     }
-    public int setIsMotorProblems(){
+    public double setIsMotorProblems(){
         if (hasMotorProblem == true){
             balance = moneyForMotor;
         }
         return this.balance;
     }
-    public int setTransmissionProblems(){
+    public double setTransmissionProblems(){
         if (hasTransmissionProblem == true){
             balance = moneyForTransmission;
         }
         return this.balance;
     }
-    public int setWheelProblems(){
+    public double setWheelProblems(){
         if (hasWheelsProblem == true){
             balance = moneyForWheels;
         }
@@ -64,11 +65,11 @@ public class Lesson4Homework3 {
             }
         }
 
-        return count;
+        return this.count;
 
     }
 
-    public int setSale() {
+    public double setSale() {
 
         for (int i = 0; i < massive.length; i++) {
             if (set1Change() == 1) {
@@ -79,13 +80,13 @@ public class Lesson4Homework3 {
             }
             if (set1Change()>=2){
                 if (massive[4]==true &&(massive[3]==true || massive[2]==true ) ){
-                    balance = (setIsFuel() +setIsElectricsProblem() + setWheelProblems() + setTransmissionProblems() + setIsMotorProblems()) -
-                            (setIsFuel() +setIsElectricsProblem() + setWheelProblems() + setTransmissionProblems() + setIsMotorProblems())/100*20;
+                    balance = (setIsFuel() +setIsElectricsProblem() + setWheelProblems() + setTransmissionProblems() + setIsMotorProblems()) * 0.8;
                     break;
-                } else if (massive[i] == true){
+                }
+                else if (massive[i] == true){
                     balance = (setIsFuel() +setIsElectricsProblem() + setWheelProblems() + setTransmissionProblems() + setIsMotorProblems()) -
                             (setIsFuel() + setIsElectricsProblem() + setWheelProblems() + setTransmissionProblems() + setIsMotorProblems())/100*10;
-
+                    break;
                 }
                 break;
             }

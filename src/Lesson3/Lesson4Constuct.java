@@ -1,7 +1,7 @@
 package Lesson3;
 
 public class Lesson4Constuct {
-    private double increment = 0.01123;
+    private  double increment = 0.01328;
     private double result = 0;
     private int count = 0;
     final int million = 1_000_000;
