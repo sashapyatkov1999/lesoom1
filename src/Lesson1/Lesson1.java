@@ -1,3 +1,4 @@
+package Lesson1;
 
 public class Lesson1 {
     public static void main(String[] args) {   //задача 1
@@ -39,7 +40,7 @@ public class Lesson1 {
 
         String textA = "Hello word!";
         String textR = textA.replace("l", "r");
-        String textB = textR.toUpperCase();
+        String textB = textR.toUpperCase().substring(0,8);
         System.out.println();
         System.out.println(textB);
 
